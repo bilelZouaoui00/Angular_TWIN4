@@ -1,1 +1,22 @@
 <app-navbar></app-navbar>
+
+<br> <br>
+
+<div style="border: 2px solid red; padding: 10px; margin: 10px" [hidden]="hidden">
+  <ul>
+    <li>idFournisseur: {{ idFournisseur }}</li>
+    <li>code: {{ code }}</li>
+    <li>libelle: {{ libelle }}</li>
+  </ul>
+</div>
+<button
+  class="btn btn-danger"
+  style="
+    margin: 20px; right: 16px;
+    position: absolute;
+    right: 16px;
+    font-size: 18px;"
+(click)="hidden = !hidden"
+  >
+  Hiden
+</button>

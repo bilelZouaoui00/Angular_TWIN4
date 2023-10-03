@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { UserComponent } from './user/user.component';
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
+import { ListFournisseurComponent } from './list-fournisseur/list-fournisseur.component';
 
 
 
@@ -18,7 +19,8 @@ import { FournisseurComponent } from './fournisseur/fournisseur.component';
     CardComponent,
     NavbarComponent,
     UserComponent,
-    FournisseurComponent
+    FournisseurComponent,
+    ListFournisseurComponent
   ],
   imports: [
     BrowserModule,
