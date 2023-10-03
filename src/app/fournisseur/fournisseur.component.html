@@ -1,6 +1,8 @@
 <app-navbar></app-navbar>
 
 <br> <br>
+<h1>Exercice 1 </h1>
+<br>
 
 <div style="border: 2px solid red; padding: 10px; margin: 10px" [hidden]="hidden">
   <ul>
@@ -9,14 +11,30 @@
     <li>libelle: {{ libelle }}</li>
   </ul>
 </div>
-<button
-  class="btn btn-danger"
-  style="
+<button class="btn btn-danger" style="
     margin: 20px; right: 16px;
     position: absolute;
     right: 16px;
-    font-size: 18px;"
-(click)="hidden = !hidden"
-  >
+    font-size: 18px;" (click)="hidden = !hidden">
   Hiden
 </button>
+
+<br>
+<h1>Exercice 2 </h1>
+<br>
+<div *ngFor="let fournisseur of ListFournisseur "
+  style="border: 2px solid rgb(0, 0, 0); padding: 10px; margin: 10px"
+  [ngStyle]="{'background-color': fournisseur.libelle === 'hp' ? 'green' : 'yellow'}">
+  <fieldset [style.font-weight]="fournisseur.code.startsWith('2A') ? 'bold' : 'normal'"
+    (dblclick)="removeFournisseur(fournisseur)">
+    <legend>Fournisseur ID: {{ fournisseur.idFournisseur }}</legend>
+    <ul>
+      <li>ID: {{ fournisseur.idFournisseur }}</li>
+      <li>Code: {{ fournisseur.code }}</li>
+      <li>Libellé: {{ fournisseur.libelle }}</li>
+    </ul>
+  </fieldset>
+</div>
+
+
+<br>
