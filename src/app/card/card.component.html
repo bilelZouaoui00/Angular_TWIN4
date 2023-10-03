@@ -1,0 +1,66 @@
+<img src="../assets/slide.png" alt="slide card" class="w-100" />
+<br><br>
+<h1>Active Account</h1>
+<div class="row row-cols-1 row-cols-md-5 g-4">
+  <!-- Utilisez *ngFor pour afficher dynamiquement les éléments -->
+  <div class="col" *ngFor="let item of items">
+    <div class="card border-primary"> <!-- Ajoutez la classe de bordure ici -->
+      <img [src]="item.picture" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ item.firstName }} {{ item.lastName }}</h5>
+        <p class="card-text">{{ item.profession }}</p>
+        <p class="card-text">{{ item.email }}</p>
+
+        <!-- Ajoutez un bouton en dessous de chaque carte -->
+        <button class="btn btn-primary">Voir plus</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<br><br><br><br>
+
+
+<h1>All Account</h1>
+<input class="navbar navbar-light bg-light" type="text" [(ngModel)]="categoryfilter" placeholder="Filtrer par catégorie"/>
+
+<table class="table align-middle mb-0 bg-white">
+  <thead class="bg-light">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Full Name</th>
+      <th scope="col">Position</th>
+      <th scope="col">Email</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items; let i = index" [hidden]="item.accountCategory.indexOf(categoryfilter) === -1">
+      <td>
+        <div class="d-flex align-items-center">
+          <img [src]="item.picture" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">{{ item.firstName }} {{ item.lastName }}</p>
+            <p class="text-muted mb-0">{{ item.profession }}</p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <p class="fw-normal mb-1">{{ item.firstName }} {{ item.lastName }}</p>
+      </td>
+      <td>
+        <span>{{ item.profession }}</span>
+      </td>
+      <td>{{ item.email }}</td>
+      <td>
+        <button class="btn btn-danger" [disabled]="isAdmin(item)" (click)="deleteUser(i)">Delete</button>
+      </td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+
+<br><br><br><br>
