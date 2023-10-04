@@ -1,1 +1,13 @@
+<app-navbar></app-navbar>
+
 <p>invoice-list works!</p>
+
+<ul *ngFor="let invoice of listInvoice">
+
+  <li>Facteur : {{invoice.idFacture}}
+    <!-- <a [routerLink]="/invoice/{{invoice.idFacture}}/{{invoice.active}}">Details 1</a> -->
+    <a [routerLink]="['/invoice', invoice.idFacture, invoice.active]">Details 1</a>
+    <a [routerLink]="['/invoice']" [queryParams]="{ id: invoice.idFacture, active: invoice.active }">Details 2</a>
+  </li>
+
+</ul>

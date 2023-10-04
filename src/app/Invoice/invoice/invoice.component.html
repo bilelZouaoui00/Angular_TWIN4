@@ -1,1 +1,8 @@
+<app-navbar></app-navbar>
 <p>invoice works!</p>
+
+<h1 *ngIf="!invoiceActive">Impossible de visualiser les détails de la facture (ID: {{ invoiceId }})</h1>
+<h1 *ngIf="invoiceActive">Détails de la facture (ID: {{ invoiceId }})</h1>
+
+
+<button routerLink="/invoiceList">Retour</button>
