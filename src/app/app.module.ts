@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { UserComponent } from './user/user.component';
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { ListFournisseurComponent } from './list-fournisseur/list-fournisseur.component';
+import { MainInvoiceComponent } from './Invoice/main-invoice/main-invoice.component';
+import { InvoiceListComponent } from './Invoice/invoice-list/invoice-list.component';
+import { InvoiceComponent } from './Invoice/invoice/invoice.component';
 
 
 
@@ -20,7 +23,10 @@ import { ListFournisseurComponent } from './list-fournisseur/list-fournisseur.co
     NavbarComponent,
     UserComponent,
     FournisseurComponent,
-    ListFournisseurComponent
+    ListFournisseurComponent,
+    MainInvoiceComponent,
+    InvoiceListComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,
