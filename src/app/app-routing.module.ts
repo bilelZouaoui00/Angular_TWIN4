@@ -15,6 +15,10 @@ const routes: Routes = [
   { path: 'invoice/:id/:active', component: InvoiceComponent },
   { path: 'invoice', component: InvoiceComponent },//is for ?param
 
+  //we add here the children module :
+  {path:'users',loadChildren:()=>import('./user/user.module').then(m=>m.UserModule)}
+
+
 
 ];
 
