@@ -13,6 +13,7 @@ import { ListFournisseurComponent } from './list-fournisseur/list-fournisseur.co
 import { MainInvoiceComponent } from './Invoice/main-invoice/main-invoice.component';
 import { InvoiceListComponent } from './Invoice/invoice-list/invoice-list.component';
 import { InvoiceComponent } from './Invoice/invoice/invoice.component';
+import { UserModule } from './user/user.module';
 
 
 
@@ -32,6 +33,7 @@ import { InvoiceComponent } from './Invoice/invoice/invoice.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    UserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
