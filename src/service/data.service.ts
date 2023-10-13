@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import jsonData from '../data/user.json'; // Import the JSON file as a module
+import jsonDataUser from '../data/user.json'; // Import the JSON file as a module
+import jsonDataProduct from '../data/produits.json'; // Import the JSON file as a module
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,11 @@ export class DataService {
   constructor() {}
 
   getData(): Observable<any[]> {
-    return of(jsonData);
+    return of(jsonDataUser);
   }
+
+  getDataProduct(): Observable<any[]> {
+    return of(jsonDataProduct);
+  }
+
 }
