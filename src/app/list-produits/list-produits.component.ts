@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { DataService } from 'src/service/data.service';
+import { ProductData } from 'src/service/ProductData.service';
 
 
 @Component({
@@ -27,7 +27,7 @@ export class ListProduitsComponent implements OnInit {
 
 
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: ProductData) { }
 
   ngOnInit(): void {
     this.dataService.getDataProduct().subscribe((data) => {

@@ -1,5 +1,5 @@
 import { Component,OnInit  } from '@angular/core';
-import { DataService } from 'src/service/data.service';
+import { ProductData } from 'src/service/ProductData.service';
 
 @Component({
   selector: 'app-card',
@@ -12,7 +12,7 @@ export class CardComponent implements OnInit {
 
   categoryfilter: string = ''; // Propriété de filtre par catégorie
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: ProductData) {}
 
   ngOnInit(): void {
     this.dataService.getData().subscribe((data) => {
