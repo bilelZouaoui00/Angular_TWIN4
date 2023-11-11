@@ -5,8 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Information</title>
-    <style>
-    </style>
+    <style></style>
   </head>
   <body>
     <h1><u>Recherche produit </u></h1>
@@ -60,35 +59,33 @@
     <hr />
     <h1><u>Ajout d'un produit </u></h1>
 
-   <!-- Formulaire d'ajout de produit -->
-<form (submit)="ajouterProduit()">
-  <div class="form-group">
-    <label for="idProduit">IdProduit :</label>
-    <input type="text" id="idProduit"  />
-  </div>
+    <!-- Formulaire d'ajout de produit -->
+    <form [formGroup]="produitForm" (submit)="ajouterProduit()">
+      <div class="form-group">
+        <label for="idProduit">IdProduit :</label>
+        <input type="text" formControlName="idProduit" />
+      </div>
 
-  <div class="form-group">
-    <label for="code">Code :</label>
-    <input type="text" id="code"  />
-  </div>
+      <div class="form-group">
+        <label for="code">Code :</label>
+        <input type="text" formControlName="code" />
+      </div>
 
-  <div class="form-group">
-    <label for="libelle">Libelle :</label>
-    <input type="text" id="libelle"  />
-  </div>
+      <div class="form-group">
+        <label for="libelle">Libelle :</label>
+        <input type="text" formControlName="libelle" />
+      </div>
 
-  <div class="form-group">
-    <label for="prixUnitaire">Prix unitaire :</label>
-    <input type="number" id="prixUnitaire"  />
-  </div>
+      <div class="form-group">
+        <label for="prixUnitaire">Prix unitaire :</label>
+        <input type="number" formControlName="prixUnitaire" />
+      </div>
 
-  <div class="form-group">
-    <label for="tauxTVA">Taux TVA unitaire :</label>
-    <input type="number" id="tauxTVA"  />
-  </div>
-  <button type="submit">Ajouter</button>
-</form>
-
-
+      <div class="form-group">
+        <label for="tauxTVA">Taux TVA unitaire :</label>
+        <input type="number" formControlName="tauxTVA" />
+      </div>
+      <button type="submit">Ajouter</button>
+    </form>
   </body>
 </html>

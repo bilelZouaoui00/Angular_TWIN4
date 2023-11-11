@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { ProductData } from 'src/service/ProductData.service';
 
@@ -15,19 +16,19 @@ export class ListProduitsComponent implements OnInit {
   codeRecherche: string = '';
   categoryfilter: string = ''; // Propriété de filtre par catégorie
   produitRecherche: any = null;
+  // Propriété pour le nouveau produit
+  produitForm: FormGroup; // declaration of the form group
 
-    // Propriété pour stocker les détails du nouveau produit
-    nouveauProduit: any = {
-      idProduit: 0,      // Assuming idProduit is an integer
-      code: '',          // Assuming code is a string
-      libelle: '',      // Assuming libelle is a floating-point number
-      prixUnitaire: 0.0, // Assuming prixUnitaire is a floating-point number
-      tauxTVA: 0.0       // Assuming tauxTVA is a floating-point number
-    };
-
-
-
-  constructor(private dataService: ProductData) { }
+  constructor(private dataService: ProductData, private fb: FormBuilder) {
+    // Initialize the form group in the constructor
+    this.produitForm = this.fb.group({
+      idProduit: [],
+      code: [''],
+      libelle: [''],
+      prixUnitaire: [],
+      tauxTVA: []
+    });
+  }
 
   ngOnInit(): void {
     this.dataService.getDataProduct().subscribe((data) => {
@@ -46,10 +47,9 @@ export class ListProduitsComponent implements OnInit {
 
   AjusterTVA(item: any) {
     item.boutonClique = true;
-    item.tauxTVA=0.02;
+    item.tauxTVA = 0.02;
   }
 
-  // Méthode pour rechercher un produit par code
   rechercherProduit() {
     this.produitRecherche = this.items.find((item) => item.code === this.codeRecherche);
     this.items = this.produitRecherche;
@@ -57,16 +57,12 @@ export class ListProduitsComponent implements OnInit {
 
   ajouterProduit() {
     // Ajoutez le nouveau produit à la liste items
-    this.items.push(this.nouveauProduit);
+    const nouveauProduit = this.produitForm.value;
+    console.log(nouveauProduit);
+    this.items.push(nouveauProduit);
+    // Réinitialisez le formulaire a vide
+    this.produitForm.reset();
 
-    // Réinitialisez le formulaire en créant un nouvel objet vide
-    this.nouveauProduit = {
-      idProduit: null,
-      code: '',
-      libelle: '',
-      prixUnitaire: null,
-      tauxTVA: null,
-    };
   }
 
 
