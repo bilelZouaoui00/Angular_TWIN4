@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './user.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 const routes: Routes = [
-  //we delete to delete routes in app.routing and we put here
-  //And we add pathcMatch:"full" in the bigin
-  // { path: '', redirectTo: '/user', pathMatch: 'full' },
-  {path:"users", component:UserComponent}
+  { path: '', component: UserComponent },
+  { path: 'adduser', component: AddUserComponent },
 ];
 
 @NgModule({

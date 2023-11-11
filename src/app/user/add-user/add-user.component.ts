@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
 export class AddUserComponent {
 
   //add user json data
-  myUser?=null;
+  // myUser?=null;
 
-  constructor ( private  userService:UserService ,private R:Router ){}
+  // constructor ( private  userService:UserService ,private R:Router ){}
 
   // add(){s
   //   this.userService.addUser(this.myUser).subscribe(()=>alert('added User successfully')

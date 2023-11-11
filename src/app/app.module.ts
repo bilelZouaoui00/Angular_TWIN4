@@ -7,13 +7,11 @@ import { CardComponent } from './card/card.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { FormsModule } from '@angular/forms';
-import { UserComponent } from './user/user.component';
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { ListFournisseurComponent } from './list-fournisseur/list-fournisseur.component';
 import { MainInvoiceComponent } from './Invoice/main-invoice/main-invoice.component';
 import { InvoiceListComponent } from './Invoice/invoice-list/invoice-list.component';
 import { InvoiceComponent } from './Invoice/invoice/invoice.component';
-import { UserModule } from './user/user.module';
 
 
 
@@ -22,7 +20,6 @@ import { UserModule } from './user/user.module';
     AppComponent,
     CardComponent,
     NavbarComponent,
-    UserComponent,
     FournisseurComponent,
     ListFournisseurComponent,
     MainInvoiceComponent,
@@ -33,7 +30,6 @@ import { UserModule } from './user/user.module';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    UserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
