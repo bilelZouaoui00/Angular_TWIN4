@@ -1,8 +1,5 @@
 import { Component,OnInit  } from '@angular/core';
-import { DataService } from 'src/service/data.service';
-import { HttpClient } from '@angular/common/http';
-import { User } from 'src/model/user.model';
-
+import { ProductData } from 'src/service/ProductData.service';
 
 @Component({
   selector: 'app-card',
@@ -12,16 +9,17 @@ import { User } from 'src/model/user.model';
 export class CardComponent implements OnInit {
 
   items: any[] = [];
-  listUsers:User[] = [];
 
   categoryfilter: string = ''; // Propriété de filtre par catégorie
-  userS: any;
 
-  constructor(private dataService: DataService,private http: HttpClient) {}
+  constructor(private dataService: ProductData) {}
 
   ngOnInit(): void {
-    this.dataService.getAllUsers().subscribe(data => this.listUsers = data);
+    this.dataService.getData().subscribe((data) => {
+      this.items = data;
+    });
   }
+
   isAdmin(item : any): boolean {
     return item.accountCategory  == 'Admin';
   }
