@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { ProductData } from 'src/service/ProductData.service';
+import { ProductData } from 'src/app/services/ProductData.service';
 
 
 @Component({
@@ -62,6 +62,11 @@ export class ListProduitsComponent implements OnInit {
     // Réinitialisez le formulaire a vide
     this.produitForm.reset();
 
+  }
+  calculateNbProducts(libelle: string): void {
+    const nbProducts = this.dataService.getNbProductsByLibelle(libelle);
+    console.log(nbProducts);
+    alert(`Nombre de produits avec le libelle "${libelle}": ${nbProducts}`);
   }
 
 

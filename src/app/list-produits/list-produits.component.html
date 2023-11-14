@@ -27,7 +27,7 @@
           'font-size.px': item.prixUnitaire <= 50 ? 20 : 16
         }"
       >
-        {{ item.idProduit }}.Produit: {{ item.libelle }}
+        {{ item.idProduit }}. {{ item.libelle }}
         <button [disabled]="item.tauxTVA == 0.02" (click)="AjusterTVA(item)">
           Ajuster TVA
         </button>
@@ -39,6 +39,7 @@
           <li>Prix Unitaire: {{ item.prixUnitaire }}</li>
           <li>Taux TVA: {{ item.tauxTVA }}</li>
         </ul>
+        <button (click)="calculateNbProducts(item.libelle)">Calculer</button>
       </div>
       <!-- Property binding pour manipuler la propriété style :  -->
       <!-- <div [style.color]="produit.prixUnitaire <= 50 ? 'blue' : 'black'"
