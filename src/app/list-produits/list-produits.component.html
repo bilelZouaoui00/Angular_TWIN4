@@ -17,6 +17,7 @@
       style="margin-left: 10px"
     />
     <!-- Rectangle with content -->
+    <div class="body-container">
     <div *ngFor="let item of items">
       <div
         *ngIf="item.code.includes(codeRecherche)"
@@ -55,6 +56,7 @@
       <!-- <div [ngClass]="{'blue-text': produit.prixUnitaire <= 50,
       'italic-text': produit.prixUnitaire <= 50,
       'large-text': produit.prixUnitaire <= 50}"> -->
+    </div>
     </div>
     <hr />
     <h1><u>Ajout d'un produit </u></h1>
